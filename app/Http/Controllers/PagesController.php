@@ -15,6 +15,10 @@ class PagesController extends Controller
         return view('pages.about');
     }public function services()
     {
-        return view('pages.services');
+        $data = array(
+          'title'=>'This is the services page',
+          'services'=>['Java','Python','PHP']
+        );
+        return view('pages.services')->with($data);
     }
 }
